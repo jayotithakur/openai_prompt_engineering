@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>OpenAI Sentiment Analysis</title>
+  <link rel="shortcut icon" href="{{ url_for('static', filename='openai.png') }}" />
+  <link rel="stylesheet" href="{{ url_for('static', filename='main.css') }}" />
+</head>
+
+<body>
+  <img src="{{ url_for('static', filename='senti.png') }}" class="icon-m" />
+  <h3>Sentiment Analysis</h3>
+  <form action="/sentiment" method="post">
+    <textarea name="review" placeholder="Enter a review" required></textarea>
+    <input type="submit" value="Analyze" />
+  </form>
+  
+  {% if result %}
+  <div class="result">
+    <p>{{ result }}</p>
+  </div>
+  {% endif %}
+</body>
+</html>

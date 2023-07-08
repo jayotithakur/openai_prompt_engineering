@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<head>
+  <title>OpenAI Prompt</title>
+  <link rel="shortcut icon" href="{{ url_for('static', filename='openai.png') }}" />
+  <link rel="stylesheet" href="{{ url_for('static', filename='main.css') }}" />
+</head>
+
+<body>
+  <img src="{{ url_for('static', filename='email1.png') }}" class="icon" />
+  <h3>Spam Email Classifier</h3>
+  <form action="/" method="post">
+    <textarea name="email" placeholder="Enter an email message" required>{{ request.form.email }}</textarea>
+    <input type="submit" value="Classify" />
+  </form>
+  {% if result %}
+  <div class="result">
+    <p>{{ result }}</p>
+  </div>
+  {% endif %}
+</body>
+</html>
+
+
